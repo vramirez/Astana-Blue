@@ -32,12 +32,15 @@ def split_list(alist, wanted_parts=1):
 
 print "Iniciando escaneo de Followers para: "+scream_name+", desde cursor:"+str(curzord)
 
+if not os.path.exists(scream_name):
+    os.makedirs(scream_name)
+
 while (curzord != 0):
 	generalist=twitter_api.followers.ids(screen_name=scream_name,cursor=curzord)
 	follow_ids=generalist["ids"] #5000 ids
 	curzord=generalist["next_cursor"]
 	las50=split_list(follow_ids, wanted_parts = int(math.ceil(len(follow_ids)/float(100))))
-	filename=scream_name+'_'+str(curzord)+'.json'
+	filename=scream_name+"/"+scream_name+'_'+str(curzord)+'.json'
 	for i in range(len(las50)):
 		ids100 = twitter_api.users.lookup(user_id=",".join([str(x) for x in las50[i]]))
 		with open(filename, 'a+') as outfile:
