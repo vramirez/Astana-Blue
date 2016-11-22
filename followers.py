@@ -1,4 +1,4 @@
-import ConfigParser,math,sys,time,twitter,json
+import os,ConfigParser,math,sys,time,twitter,json
 
 config = ConfigParser.RawConfigParser()
 config.read('twauth.properties')
