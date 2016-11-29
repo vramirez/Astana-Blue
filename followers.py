@@ -19,7 +19,7 @@ scream_name="bikthor"
 curzord = -1
 
 if len(sys.argv)>1 :
-	scream_name=sys.argv[1]
+	scream_name=str.lower(sys.argv[1])
 
 if len(sys.argv)>2 :
 	curzord = sys.argv[2]
@@ -47,6 +47,6 @@ while (curzord != 0):
 	    		json.dump(ids100, outfile)
 			outfile.write("\n")
 			outfile.close()
-	time.sleep(55)
+	time.sleep(50)
 
 
