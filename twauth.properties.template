@@ -1,0 +1,8 @@
+[OAuth]
+
+#Add your Twitter tokens, keys, and then please remove THIS line, rename this file without the '.properties'.
+
+key=
+key_secret=
+token=
+token_secret=
