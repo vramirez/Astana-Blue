@@ -36,7 +36,7 @@ if not os.path.exists(scream_name):
     os.makedirs(scream_name)
 
 while (curzord != 0):
-	generalist=twitter_api.followers.ids(screen_name=scream_name,cursor=curzord)
+	generalist=twitter_api.followers.ids(screen_name=scream_name,cursor=curzord,count=5000)
 	follow_ids=generalist["ids"] #5000 ids
 	curzord=generalist["next_cursor"]
 	las50=split_list(follow_ids, wanted_parts = int(math.ceil(len(follow_ids)/float(100))))
@@ -47,6 +47,6 @@ while (curzord != 0):
 	    		json.dump(ids100, outfile)
 			outfile.write("\n")
 			outfile.close()
-	time.sleep(50)
+	time.sleep(45)
 
 

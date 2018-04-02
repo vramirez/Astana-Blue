@@ -9,6 +9,10 @@ key_secret=config.get('OAuth','key_secret')
 token=config.get('OAuth','token')
 token_secret=config.get('OAuth','token_secret')
 
+print key
+print key_secret
+print token
+print token_secret
 
 auth=twitter.oauth.OAuth(token,token_secret,key,key_secret)
 twitter_api= twitter.Twitter(auth=auth)
