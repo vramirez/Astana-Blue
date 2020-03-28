@@ -37,14 +37,8 @@ if not os.path.exists(scream_name):
     os.makedirs(scream_name)
 
 while (curzord != 0):
-<<<<<<< HEAD
 	generalist=twitter_api.followers.ids(screen_name=scream_name,cursor=curzord,count=5000)
 	follow_ids=generalist["ids"] #5000 ids
-=======
-	generalist=twitter_api.followers.ids(screen_name=scream_name,cursor=curzord)
-	#generalist=twitter_api.GetFollowerIDsPaged(screen_name=scream_name,cursor=curzord,stringify_ids=True)
-	follow_ids=generalist["ids"]#0000 ids
->>>>>>> bec36bbce18a9eae6a2c1c50ea941a4d9c2c167c
 	curzord=generalist["next_cursor"]
 	las50=split_list(follow_ids, wanted_parts = int(math.ceil(len(follow_ids)/float(100))))
 	filename=scream_name+"/"+scream_name+'_'+str(curzord)+'.json'
